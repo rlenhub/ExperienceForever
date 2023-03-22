@@ -1,0 +1,6 @@
+# BUILDING
+In order to build from source, you must set up the BepInEx development environment. To do this, simply follow [this guide](https://docs.bepinex.dev/articles/dev_guide/plugin_tutorial/1_setup.html).
+
+Once you have done that, then you have to copy the dependencies from your installation of Escape from Tarkov. You can find the names of these files in lower portion of the `csproj` file. Copy these files to the `lib` folder in the project root.
+
+Once that is done, all you have to do is write `dotnet build` in the terminal, and the plugin will be compiled and sent to the `bin` folder.
