@@ -24,25 +24,24 @@ using System.Reflection;
 using BepInEx;
 
 namespace ExperienceForever {
-    public class ExpForever : ModulePatch {
-        public static bool Enabled = true;
-        public static float Multiplier = 1.0f;
-        
+    public class EffectivenessPatch : ModulePatch {        
         protected override MethodBase GetTargetMethod() {
             return typeof(SkillsClass).GetMethod("GetEffectiveness", BindingFlags.Public | BindingFlags.Instance);
         }
 
-        // [PatchPrefix]
-        // private static void PatchPrefix(ref int skillPointsEarned) {
-        //     BackendConfigSettingsClass instance = Singleton<BackendConfigSettingsClass>.Instance;
-            
-		//     int skillFreshPoints = instance.SkillFreshPoints;
-        //     skillPointsEarned = 0;
-        // }
-
         [PatchPostfix]
-        private static void PatchPostfix(ref int skillPointsEarned, ref float __result) {
-            __result = Enabled ? Multiplier : __result;
+        private static void PatchPostfix(ref int skillPointsEarned, ref SkillsClass __instance, ref float __result) {
+            if(Plugin.config_enabled.Value == false)
+                return;
+
+            if(!Plugin.ConfigsAvailable) {
+                Logger.LogInfo($"{PluginInfo.PLUGIN_GUID}: [ERROR] Configs unavailable!");
+                return;
+            }
+
+            var mult = Plugin.config_skillBonus.Value;
+            
+            __result = Plugin.config_enabled.Value ? mult : __result;
         }
     }
 }

@@ -18,6 +18,7 @@
 
 using BepInEx;
 using BepInEx.Configuration;
+using System;
 
 namespace ExperienceForever
 {
@@ -25,8 +26,22 @@ namespace ExperienceForever
     [BepInProcess("EscapeFromTarkov.exe")]
     public class Plugin : BaseUnityPlugin
     {
-        private ConfigEntry<bool> config_enabled;
-        private ConfigEntry<float> config_skillBonus;
+        public static ConfigEntry<bool> config_enabled;
+        public static ConfigEntry<float> config_skillBonus;
+        public static ConfigEntry<float> config_metabolism;
+
+        public static Plugin Instance { get; private set; }
+
+        public static bool ConfigsAvailable {
+            get {
+                var result = true;
+                result &= config_enabled != null;
+                result &= config_skillBonus != null;
+                result &= config_metabolism != null;
+
+                return result;
+            }
+        }
         
         private void Awake()
         {
@@ -43,20 +58,23 @@ namespace ExperienceForever
                 1.0f,
                 "Sets your levelling speed multiplier to this value."
             );
+
+            config_metabolism = Config.Bind(
+                "Specifics",
+                "Metabolism Multiplier",
+                0.1f,
+                "XP rewards for Metabolism are very high, so this setting will allow you to adjust earnings to be more in line with other skills."
+            );
             
             // Plugin startup logic
             Logger.LogInfo($"Plugin {PluginInfo.PLUGIN_GUID} is loaded!");
+
+            Instance = this;
         }
 
         private void Start() {
-            ExpForever.Enabled = config_enabled.Value;
-            ExpForever.Multiplier = config_skillBonus.Value;
-            new ExpForever().Enable();
-        }
-
-        private void Update() {
-            ExpForever.Enabled = config_enabled.Value;
-            ExpForever.Multiplier = System.Math.Max(0.0f, config_skillBonus.Value);
+            new EffectivenessPatch().Enable();
+            new MetabolismPatch().Enable();
         }
     }
 }
