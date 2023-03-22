@@ -1,0 +1,12 @@
+E:\Projects\dotnet\bepinex\spt\ExperienceForever\bin\Debug\net46\ExperienceForever.dll
+E:\Projects\dotnet\bepinex\spt\ExperienceForever\bin\Debug\net46\ExperienceForever.pdb
+E:\Projects\dotnet\bepinex\spt\ExperienceForever\bin\Debug\net46\Assembly-CSharp.dll
+E:\Projects\dotnet\bepinex\spt\ExperienceForever\obj\Debug\net46\ExperienceForever.csproj.AssemblyReference.cache
+E:\Projects\dotnet\bepinex\spt\ExperienceForever\obj\Debug\net46\PluginInfo.cs
+E:\Projects\dotnet\bepinex\spt\ExperienceForever\obj\Debug\net46\ExperienceForever.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects\dotnet\bepinex\spt\ExperienceForever\obj\Debug\net46\ExperienceForever.AssemblyInfoInputs.cache
+E:\Projects\dotnet\bepinex\spt\ExperienceForever\obj\Debug\net46\ExperienceForever.AssemblyInfo.cs
+E:\Projects\dotnet\bepinex\spt\ExperienceForever\obj\Debug\net46\ExperienceForever.csproj.CoreCompileInputs.cache
+E:\Projects\dotnet\bepinex\spt\ExperienceForever\obj\Debug\net46\ExperienceForever.csproj.CopyComplete
+E:\Projects\dotnet\bepinex\spt\ExperienceForever\obj\Debug\net46\ExperienceForever.dll
+E:\Projects\dotnet\bepinex\spt\ExperienceForever\obj\Debug\net46\ExperienceForever.pdb

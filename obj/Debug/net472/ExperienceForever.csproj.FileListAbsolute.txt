@@ -1,0 +1,14 @@
+E:\Projects\dotnet\bepinex\spt\ExperienceForever\obj\Debug\net472\ExperienceForever.csproj.AssemblyReference.cache
+E:\Projects\dotnet\bepinex\spt\ExperienceForever\obj\Debug\net472\PluginInfo.cs
+E:\Projects\dotnet\bepinex\spt\ExperienceForever\obj\Debug\net472\ExperienceForever.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects\dotnet\bepinex\spt\ExperienceForever\obj\Debug\net472\ExperienceForever.AssemblyInfoInputs.cache
+E:\Projects\dotnet\bepinex\spt\ExperienceForever\obj\Debug\net472\ExperienceForever.AssemblyInfo.cs
+E:\Projects\dotnet\bepinex\spt\ExperienceForever\obj\Debug\net472\ExperienceForever.csproj.CoreCompileInputs.cache
+E:\Projects\dotnet\bepinex\spt\ExperienceForever\bin\Debug\net472\ExperienceForever.dll
+E:\Projects\dotnet\bepinex\spt\ExperienceForever\bin\Debug\net472\ExperienceForever.pdb
+E:\Projects\dotnet\bepinex\spt\ExperienceForever\bin\Debug\net472\Aki.Reflection.dll
+E:\Projects\dotnet\bepinex\spt\ExperienceForever\bin\Debug\net472\Assembly-CSharp.dll
+E:\Projects\dotnet\bepinex\spt\ExperienceForever\obj\Debug\net472\ExperienceForever.csproj.CopyComplete
+E:\Projects\dotnet\bepinex\spt\ExperienceForever\obj\Debug\net472\ExperienceForever.dll
+E:\Projects\dotnet\bepinex\spt\ExperienceForever\obj\Debug\net472\ExperienceForever.pdb
+E:\Projects\dotnet\bepinex\spt\ExperienceForever\bin\Debug\net472\Comfort.dll
