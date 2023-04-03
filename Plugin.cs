@@ -28,6 +28,7 @@ namespace ExperienceForever
     {
         public static ConfigEntry<bool> config_enabled;
         public static ConfigEntry<float> config_skillBonus;
+        public static ConfigEntry<bool> config_useAutoSkillAdjustment;
         public static ConfigEntry<float> config_metabolism;
 
         public static Plugin Instance { get; private set; }
@@ -59,6 +60,13 @@ namespace ExperienceForever
                 "Sets your levelling speed multiplier to this value."
             );
 
+            config_useAutoSkillAdjustment = Config.Bind(
+                "Experimental",
+                "Use Automatic Skill Adjustment",
+                false,
+                "Attempts to adjust skill gains based on how many points you earn throughout the course of the game."
+            );
+
             config_metabolism = Config.Bind(
                 "Specifics",
                 "Metabolism Multiplier",
@@ -73,6 +81,7 @@ namespace ExperienceForever
         }
 
         private void Start() {
+            new LevelBalancePatch().Enable();
             new EffectivenessPatch().Enable();
             new MetabolismPatch().Enable();
         }

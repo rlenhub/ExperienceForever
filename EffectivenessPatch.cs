@@ -24,7 +24,12 @@ using System.Reflection;
 using BepInEx;
 
 namespace ExperienceForever {
-    public class EffectivenessPatch : ModulePatch {        
+    public class EffectivenessPatch : ModulePatch {
+        public static float GetSkillPointAdjustment(float inValue) {
+            var mult = Plugin.config_skillBonus.Value;
+            return Plugin.config_enabled.Value ? mult : inValue;
+        }
+          
         protected override MethodBase GetTargetMethod() {
             return typeof(SkillsClass).GetMethod("GetEffectiveness", BindingFlags.Public | BindingFlags.Instance);
         }
@@ -38,10 +43,8 @@ namespace ExperienceForever {
                 Logger.LogInfo($"{PluginInfo.PLUGIN_GUID}: [ERROR] Configs unavailable!");
                 return;
             }
-
-            var mult = Plugin.config_skillBonus.Value;
             
-            __result = Plugin.config_enabled.Value ? mult : __result;
+            __result = GetSkillPointAdjustment(__result);
         }
     }
 }
